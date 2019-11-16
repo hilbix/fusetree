@@ -400,8 +400,8 @@ class FileHandle:
         errors this is not always useful.
 
         NOTE: The flush() method may be called more than once for each
-        open().	This happens if more than one file descriptor refers
-        to an opened file due to dup(), dup2() or fork() calls.	It is
+        open(). This happens if more than one file descriptor refers
+        to an opened file due to dup(), dup2() or fork() calls. It is
         not possible to determine if a flush is final, so each flush
         should be treated equally.  Multiple write-flush sequences are
         relatively rare, so this shouldn't be a problem.
@@ -420,7 +420,7 @@ class FileHandle:
         are unmapped.
 
         For every open() call there will be exactly one release() call
-        with the same flags and file descriptor.	 It is possible to
+        with the same flags and file descriptor.  It is possible to
         have a file opened more than once, in which case only the last
         release will mean, that no more reads/writes will happen on the
         file.  The return value of release is ignored.
@@ -436,7 +436,7 @@ class FileHandle:
         are unmapped.
 
         For every open() call there will be exactly one release() call
-        with the same flags and file descriptor.	 It is possible to
+        with the same flags and file descriptor.  It is possible to
         have a file opened more than once, in which case only the last
         release will mean, that no more reads/writes will happen on the
         file.  The return value of release is ignored.
@@ -458,8 +458,8 @@ class FileHandle:
 
         For F_GETLK operation, the library will first check currently
         held locks, and if a conflicting lock is found it will return
-        information without calling this method.	 This ensures, that
-        for local locks the l_pid field is correctly filled in.	The
+        information without calling this method.  This ensures, that
+        for local locks the l_pid field is correctly filled in. The
         results may not be accurate in case of race conditions and in
         the presence of hard links, but it's unlikely that an
         application would rely on accurate GETLK results in these
