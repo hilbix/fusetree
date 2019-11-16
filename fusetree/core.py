@@ -248,11 +248,10 @@ class Node:
 
     async def create(self, name: str, mode: int) -> 'FileHandle':
         """
-        Check file access permissions
+        Create the file with gie given mode and open it
 
-        This will be called for the access() system call.  If the
-        'default_permissions' mount option is given, this method is not
-        called.
+        Like open, but called on O_CREAT.  Never called on Linux before 2.6.15.
+        See also: mknod() and open()
         """
         raise fuse.FuseOSError(errno.ENOSYS)
 
